@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import { useState } from 'react';
 import { executeRequest } from "../services/api";
+import { useRouter } from "next/router";
 
 type LoginProps = {
     setToken(s:string):void
@@ -12,6 +13,7 @@ export const Login: NextPage<LoginProps> = ({setToken}) => {
     const [password, setPassword] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
     const [loading, setLoading] = useState(false);
+    const router = useRouter();
 
     const doLogin = async () => {
         try {
