@@ -1,4 +1,13 @@
+import { useRouter } from "next/router";
+
 export default function createacc() {
+  const router = useRouter();
+
+
+  function goBack() {
+    router.push("/");
+ };
+
   return (
     <div className="container-login">
         <img src="/logo.svg" alt="Logo Fiap" className="logo" />
@@ -25,7 +34,9 @@ export default function createacc() {
             </div>
 
             <button>Cadastrar</button>
+            <button onClick={goBack}>Voltar</button>
         </div>
+        
     </div>
 );
 }
