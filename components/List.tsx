@@ -91,7 +91,7 @@ export const List: NextPage<ListProps> = ({ tasks, getFilteredData }) => {
         setErrorMsg('');
         setId(task._id);
         setName(task.name);
-        setFinishPrevisionDate(moment(task.finishPrevisionDate).format('yyyy-MM-DD'));
+        setFinishPrevisionDate(moment.utc(task.finishPrevisionDate).format('yyyy-MM-DD'));
     }
 
     return (

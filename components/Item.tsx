@@ -12,10 +12,11 @@ export const Item: NextPage<ItemProps> = ({task, selecionarTarefa}) => {
 
     const getDateText = (finishDate : string | undefined, finishPrevisionDate : string) => {
         if(finishDate){
-            return `Concluído em: ${moment(finishDate).format('DD/MM/yyyy')}`;
+            var localDate = moment.utc(finishDate);
+            return `Concluído em: ${localDate.format('DD/MM/yyyy')}`;
         }
 
-        return `Conclusão em: ${moment(finishPrevisionDate).format('DD/MM/yyyy')}`;
+        return `Conclusão em: ${moment.utc(finishPrevisionDate).format('DD/MM/yyyy')}`;
     }
 
     return (
