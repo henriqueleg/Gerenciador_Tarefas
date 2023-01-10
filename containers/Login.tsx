@@ -47,6 +47,10 @@ export const Login: NextPage<LoginProps> = ({setToken}) => {
         setLoading(false);
     }
 
+    function doRegister() {
+       router.push("/createacc");
+    };
+
     return (
         <div className="container-login">
             <img src="/logo.svg" alt="Logo Fiap" className="logo" />
@@ -66,7 +70,8 @@ export const Login: NextPage<LoginProps> = ({setToken}) => {
                     />
                 </div>
 
-                <button onClick={doLogin} disabled={loading}>{loading ? '...Carregando' : 'Login'}</button>
+                <button onClick={doLogin} disabled={loading}>{loading ? '...' : 'Login'}</button>
+                <button onClick={doRegister}>Cadastrar</button>
             </div>
         </div>
     );

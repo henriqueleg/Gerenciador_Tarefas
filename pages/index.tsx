@@ -4,7 +4,7 @@ import { Login } from '../containers/Login'
 
 export default function Index() {
   const [accessToken, setAccessToken] = useState('');
-
+  
   useEffect(() => {
     if(window !== undefined){
       const token = localStorage.getItem('accessToken');
